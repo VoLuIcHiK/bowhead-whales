@@ -13,7 +13,10 @@
 ## Стек:
 Решение разработано на языке Python с использованием следующего стека: PyQt5, PyTorch, Transformers, Albumentations и PML.
 
-## Запуск
+## Обучение модели идентификации:
+https://colab.research.google.com/drive/1NcTanmnjN1c948WCHnRJfPdwYiRJlDVp?usp=sharing
+
+## Запуск:
 Установить библиотеки  
 `pip install -r requirements.txt'`  
 Команда для запуска (source) из папки проекта  

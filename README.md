@@ -11,7 +11,7 @@
 Преимуществами данного решения являются его высокая точность идентификации и автономность - использование без доступа к сети Интернет.
 
 ## Стек:
-Решение разработано на языке Python с использованием следующего стека: PyQt5, PyTorch, Transformers, Albumentations и PML.
+Решение разработано на языке Python(3.10) с использованием следующего стека: PyQt5, PyTorch, Transformers, Albumentations и PML.
 
 ## Блокнот с обучением и тестированием модели идентификации:
 https://colab.research.google.com/drive/1NcTanmnjN1c948WCHnRJfPdwYiRJlDVp?usp=sharing

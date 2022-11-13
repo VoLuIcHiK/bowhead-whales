@@ -1,0 +1,39 @@
+QPushButton {
+    color: #fff;
+    text-transform: uppercase;
+    border: 2px solid #8f8f91;
+    border-radius: 6px;
+    background-color: #c0392b;
+    min-width: 80px;
+    font-size: 22px;
+    text-align: center;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #c0392b, stop: 1 #FF1A00);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
+QMainWindow{
+    background-color: #2c3e50;
+}
+QListWidget{
+background-color : #2c3e50;
+color: white;
+font-size: 18px;
+}
+QLabel#main_text{
+    color:white;
+    font-size: 75px;
+}
+QLabel{
+color:white;
+font-size: 36px;
+}

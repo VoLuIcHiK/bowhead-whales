@@ -50,7 +50,6 @@ def main_function(path, new_window, ui_window: Ui_MainWindow):
         current_row = -1
         while True:
             sleep(0.5)
-            # print("cringe")
             # key = название папки
             # value - словарь номеров китов и кол-ва файлов с ними
             for key, value in get_only_stats_from_new_parsed_images().items():
@@ -91,6 +90,12 @@ def main_function(path, new_window, ui_window: Ui_MainWindow):
                 break
             last_pass = True
         ui_window.status.setText("Статус выполнения: завершено!")
+        f = open('../results.csv', mode="w+", encoding='utf8')
+        f.write("ID;quanity\n")
+        for i in range(table.rowCount()):
+            f.write(
+                f"{table.item(i, 0).text()};{table.item(i, 1).text()}\n")
+        f.close()
 
     def local_func_recur():
         nonlocal th1, table
@@ -118,6 +123,7 @@ def main_function(path, new_window, ui_window: Ui_MainWindow):
                 for key2, value2 in value.items():
                     if key2 == 0:
                         local_old += value2
+                        new_entity += value2
                     else:
                         local_new += value2
                         ent_id = str(key2)
@@ -150,8 +156,12 @@ def main_function(path, new_window, ui_window: Ui_MainWindow):
                 break
             last_pass = True
         ui_window.status.setText("Статус выполнения: завершено!")
+        f = open('../results.csv',mode="w+",encoding='utf8')
+        f.write("folder;ID\n")
+        for i in range(table.rowCount()):
+            f.write(f"{table.item(i,0).text()};{table.item(i,1).text()}\n")
+        f.close()
 
-    print("before thread")
     if mode == '1':
         th = threading.Thread(target=local_func_one_folder,
                               daemon=True)
@@ -162,7 +172,6 @@ def main_function(path, new_window, ui_window: Ui_MainWindow):
                               daemon=True)
         th.start()
         th.join(0.01)
-    print("after thread")
 
 
 def uploadController(main_window: QMainWindow, new_window: QMainWindow,
